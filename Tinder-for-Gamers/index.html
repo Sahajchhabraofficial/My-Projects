@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f0b1a" />
+    <title>PLAYNEXT | Discover your next game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="PLAYNEXT home">
+          <span class="brand-mark" aria-hidden="true"
+            ><span></span><span></span><span></span
+          ></span>
+          <span>
+            <strong>PLAYNEXT</strong>
+            <small>Discover your next game</small>
+          </span>
+        </a>
+        <button
+          class="icon-button"
+          type="button"
+          aria-label="Search games"
+          data-toast="Search is coming soon"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4.5 4.5"></path>
+          </svg>
+        </button>
+      </header>
+
+      <section class="finder" aria-labelledby="finder-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> Curated for you</p>
+            <h1 id="finder-title">Find your next <em>obsession.</em></h1>
+          </div>
+          <span class="counter">01 <i>/</i> 06</span>
+        </div>
+
+        <div class="card-stage">
+          <div class="peek-card peek-left" aria-hidden="true"></div>
+          <div class="peek-card peek-right" aria-hidden="true"></div>
+          <article
+            class="game-card"
+            data-game-card
+            tabindex="0"
+            aria-label="Swipe card to save or dismiss Minecraft"
+          >
+            <div class="artwork">
+              <div class="artwork-copy">
+                <span>MOJANG STUDIOS</span><strong>CREATIVE<br />MODE</strong>
+              </div>
+              <div class="platform-badge"><span>▣</span> PC</div>
+              <div class="artwork-fade"></div>
+            </div>
+            <div class="game-content">
+              <div class="tags">
+                <span>Sandbox</span><span>Adventure</span><span>Survival</span>
+              </div>
+              <h2>Minecraft</h2>
+              <p class="description">
+                Build, explore, survive and unleash your creativity in a world
+                made of blocks. Endless possibilities are waiting.
+              </p>
+              <div class="rating">
+                <span class="star">★</span><strong>4.6</strong
+                ><span class="divider"></span><span>2M+ reviews</span>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="primary-button"
+                  type="button"
+                  data-toast="Opening Minecraft"
+                >
+                  <span>▶</span> Play now
+                </button>
+                <button
+                  class="secondary-button"
+                  type="button"
+                  data-toast="Minecraft details"
+                >
+                  <span>Details</span><b>↗</b>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item active" href="#saved"
+        ><span class="nav-icon">♡</span
+        ><span class="saved-label">Saved</span></a
+      >
+      <button
+        class="scroll-button"
+        type="button"
+        aria-label="Discover another game"
+        data-toast="Finding your next game"
+      >
+        <span>✣</span><small>Scroll</small>
+      </button>
+      <a class="nav-item" href="#profile"
+        ><span class="nav-icon">◉</span><span>Profile</span></a
+      >
+    </nav>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
+  <script src="script.js"></script>
+</html>
