@@ -127,29 +127,28 @@ ctk.CTkLabel(
 ).pack(anchor="w", pady=(0, 9))
 gender_options = ctk.CTkFrame(gender_field, fg_color="transparent")
 gender_options.pack(anchor="w")
-Male_Gender = tk.BooleanVar()
-Female_Gender = tk.BooleanVar()
-ctk.CTkCheckBox(
+Gender = tk.StringVar(value="")
+ctk.CTkRadioButton(
     gender_options,
     text="Male",
-    variable=Male_Gender,
+    variable=Gender,
+    value="Male",
     font=ctk.CTkFont(family="Segoe UI", size=14),
     text_color="#E2E8F0",
     fg_color="#2563EB",
     hover_color="#1D4ED8",
     border_color="#64748B",
-    corner_radius=5,
 ).pack(side="left", padx=(0, 28))
-ctk.CTkCheckBox(
+ctk.CTkRadioButton(
     gender_options,
     text="Female",
-    variable=Female_Gender,
+    variable=Gender,
+    value="Female",
     font=ctk.CTkFont(family="Segoe UI", size=14),
     text_color="#E2E8F0",
     fg_color="#2563EB",
     hover_color="#1D4ED8",
     border_color="#64748B",
-    corner_radius=5,
 ).pack(side="left")
 
 
@@ -157,12 +156,9 @@ def Submit(Name, Age, E_mail,  In_Game_Name, In_Game_Role):
     Name=Name.get()
     Age=Age.get()
     E_mail=E_mail.get()
-    global Male_Gender, Female_Gender
-    Male_Gender=Male_Gender.get()
-    Female_Gender=Female_Gender.get()
     In_Game_Name=In_Game_Name.get()
     In_Game_Role=In_Game_Role.get()
-    gender = "Male" if Male_Gender else "Female" if Female_Gender else None
+    gender = Gender.get() or None
     if Name != "" and Age != "" and gender is not None and E_mail != "" and In_Game_Role != "" and In_Game_Name != "":
         query = """INSERT INTO registerd_players
                    (name, age, e_mail, in_game_name, in_game_role, gender)
